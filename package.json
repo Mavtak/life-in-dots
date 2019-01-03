@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Mavtak/life-in-dots/issues"
   },
-  "homepage": "https://github.com/Mavtak/life-in-dots#readme"
+  "homepage": "https://github.com/Mavtak/life-in-dots#readme",
+  "devDependencies": {
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0"
+  }
 }
