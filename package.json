@@ -4,6 +4,8 @@
   "description": "see your life represented as a series of dots, each representing 7 days.  this is fine!",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
+    "build-watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
