@@ -1,0 +1,19 @@
+{
+  "name": "life-in-dots",
+  "version": "1.0.0",
+  "description": "see your life represented as a series of dots, each representing 7 days.  this is fine!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mavtak/life-in-dots.git"
+  },
+  "author": "David McGrath <life-in-dots@davidmcgrath.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mavtak/life-in-dots/issues"
+  },
+  "homepage": "https://github.com/Mavtak/life-in-dots#readme"
+}
