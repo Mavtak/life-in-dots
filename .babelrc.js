@@ -3,7 +3,12 @@ module.exports = function (api) {
 
   return ({
     presets: [
-      require('@babel/preset-env'),
+      [
+        require('@babel/preset-env'),
+        {
+          modules: 'commonjs',
+        },
+      ],
       require('@babel/preset-react'),
     ],
   });
