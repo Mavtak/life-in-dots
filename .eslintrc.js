@@ -18,6 +18,7 @@ module.exports = {
   rules: {
     'indent': ['error', 2],
     'no-console': 'off',
+    'no-constant-condition': 'off',
     'no-unreachable': 'off',
     'no-unused-vars': 'off',
     'react/display-name': 'off',
