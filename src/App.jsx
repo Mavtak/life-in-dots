@@ -1,11 +1,14 @@
 import React from 'react';
+import Poster from './Poster.jsx';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        this is fine!
-      </div>
+      <Poster
+        birthday="1989-10-05"
+        maxAge={90}
+        name="David"
+      />
     );
   }
 }
