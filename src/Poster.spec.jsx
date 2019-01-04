@@ -19,6 +19,7 @@ describe('Poster', () => {
         birthday="2000-01-02"
         maxAge={123}
         name="Herp McDerpson"
+        now="2001-02-03"
       />
     );
   });
@@ -51,7 +52,7 @@ describe('Poster', () => {
     });
     
     it('contains the result of generateDots', () => {
-      expect(dots()).toHaveText('generateDots({"birthday":"2000-01-02","maxAge":123})');
+      expect(dots()).toHaveText('generateDots({"birthday":"2000-01-02","maxAge":123,"now":"2001-02-03"})');
     });
   });
 });

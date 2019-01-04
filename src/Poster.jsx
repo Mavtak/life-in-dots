@@ -7,6 +7,7 @@ const Poster = ({
   birthday,
   maxAge,
   name,
+  now,
 }) => (
   <div>
     <div
@@ -22,6 +23,7 @@ const Poster = ({
         generateDots({
           birthday,
           maxAge,
+          now,
         })
       }
     </div>
@@ -35,6 +37,10 @@ Poster.propTypes = {
   ]).isRequired,
   maxAge: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
+  now: PropTypes.oneOfType([
+    PropTypes.instanceOf(moment),
+    PropTypes.string,
+  ]).isRequired,
 };
 
 export default Poster;

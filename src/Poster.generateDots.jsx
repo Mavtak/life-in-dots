@@ -6,8 +6,11 @@ import Dot from './Dot.jsx';
 export default function generateDots({
   birthday,
   maxAge,
+  now,
 }) {
   birthday = moment(birthday);
+  now = moment(now);
+  
   let weekNumber = 0;
   let result = [];
 
@@ -32,6 +35,7 @@ export default function generateDots({
 
     result.push(
       <Dot
+        crossedOut={endOfWeek < now}
         key={`week ${weekNumber}`}
       />
     );

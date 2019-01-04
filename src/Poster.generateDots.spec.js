@@ -9,13 +9,14 @@ describe('generateDots', () => {
   it('returns ages 0 through the provided age, separated by 52 dots', () => {
     let result = generateDots({
       birthday: '2000-01-02',
-      maxAge: 3
+      maxAge: 3,
+      now:"2001-02-03",
     });
     let text = transformToText(result);
 
     expect(text).toEqual([
-      '0....................................................',
-      '1....................................................',
+      '0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      '1xxxx................................................',
       '2....................................................',
     ]);
   });
@@ -45,7 +46,11 @@ function transformToText(dots) {
     }
 
     if (x.type === Dot) {
-      text[text.length - 1] += '.';
+      if (x.props.crossedOut) {
+        text[text.length - 1] += 'x';
+      } else {
+        text[text.length - 1] += '.';
+      }
       return;
     }
 
