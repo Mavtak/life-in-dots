@@ -5,9 +5,15 @@ import {
 import Dot from './Dot.jsx';
 
 describe('Dot', () => {
+  let dotSymbol;
+  let xSymbol;
   let subject;
   
   beforeEach(() => {
+    dotSymbol = () => subject.children().at(0);
+
+    xSymbol = () => subject.children().at(1);
+
     subject = shallow(
       <Dot />
     );
@@ -24,8 +30,46 @@ describe('Dot', () => {
   it('is monospace', () => {
     expect(subject).toHaveStyle('fontFamily', 'monospace');
   });
+  
+  it('is positioned relatively', () => {
+    expect(subject).toHaveStyle('position', 'relative');
+  });
 
-  it('renders a bullet point', () => {
-    expect(subject).toHaveText('\u2022');
+  describe('when "crossedOut" prop is true', () => {
+    beforeEach(() => {
+      subject.setProps({
+        crossedOut: false,
+      });
+    });
+
+    it('renders a bullet point', () => {
+      expect(dotSymbol()).toHaveText('\u2022');
+    });
+
+    it('does not render an x symbol', () => {
+      expect(xSymbol()).not.toExist();
+    });
+  });
+
+  describe('when "crossedOut" prop is true', () => {
+    beforeEach(() => {
+      subject.setProps({
+        crossedOut: true,
+      });
+    });
+
+    it('renders a bullet point', () => {
+      expect(dotSymbol()).toHaveText('\u2022');
+    });
+    
+    it('renders a x symbol', () => {
+      expect(xSymbol()).toHaveText('\u00D7');
+    });
+
+    it('positions the x sombol over the bullet', () => {
+      expect(xSymbol()).toHaveStyle('position', 'absolute');
+      expect(xSymbol()).toHaveStyle('top', 0);
+      expect(xSymbol()).toHaveStyle('left', 0);
+    });
   });
 });
