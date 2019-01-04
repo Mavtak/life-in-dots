@@ -7,7 +7,10 @@ import generateDots from './Poster.generateDots.jsx';
 
 describe('generateDots', () => {
   it('returns ages 0 through the provided age, separated by 52 dots', () => {
-    let result = generateDots(3);
+    let result = generateDots({
+      birthday: '2000-01-02',
+      maxAge: 3
+    });
     let text = transformToText(result);
 
     expect(text).toEqual([
@@ -18,15 +21,17 @@ describe('generateDots', () => {
   });
 
   it('sets keys', () => {
-    let result = generateDots(3);
+    let result = generateDots({
+      maxAge: 3
+    });
 
     expect(result[0].key).toBe('age 0');
-    expect(result[1].key).toBe('age 0 week 0');
-    expect(result[2].key).toBe('age 0 week 1');
-    expect(result[52].key).toBe('age 0 week 51');
+    expect(result[1].key).toBe('week 0');
+    expect(result[2].key).toBe('week 1');
+    expect(result[52].key).toBe('week 51');
     expect(result[53].key).toBe('age 1');
-    expect(result[54].key).toBe('age 1 week 0');
-    expect(result[55].key).toBe('age 1 week 1');
+    expect(result[54].key).toBe('week 52');
+    expect(result[55].key).toBe('week 53');
   });
 });
 

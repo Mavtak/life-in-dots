@@ -16,6 +16,7 @@ describe('Poster', () => {
 
     subject = shallow(
       <Poster
+        birthday="2000-01-02"
         maxAge={123}
         name="Herp McDerpson"
       />
@@ -50,7 +51,7 @@ describe('Poster', () => {
     });
     
     it('contains the result of generateDots', () => {
-      expect(dots()).toHaveText('generateDots(123)');
+      expect(dots()).toHaveText('generateDots({"birthday":"2000-01-02","maxAge":123})');
     });
   });
 });

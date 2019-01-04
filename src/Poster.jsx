@@ -3,6 +3,7 @@ import React from 'react';
 import generateDots from './Poster.generateDots.jsx';
 
 const Poster = ({
+  birthday,
   maxAge,
   name,
 }) => (
@@ -17,13 +18,17 @@ const Poster = ({
     </div>
     <div>
       {
-        generateDots(maxAge)
+        generateDots({
+          birthday,
+          maxAge,
+        })
       }
     </div>
   </div>
 );
 
 Poster.propTypes = {
+  birthday: PropTypes.string.isRequired,
   maxAge: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
 };
