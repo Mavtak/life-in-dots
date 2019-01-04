@@ -1,3 +1,4 @@
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React from 'react';
 import generateDots from './Poster.generateDots.jsx';
@@ -28,7 +29,10 @@ const Poster = ({
 );
 
 Poster.propTypes = {
-  birthday: PropTypes.string.isRequired,
+  birthday: PropTypes.oneOfType([
+    PropTypes.instanceOf(moment),
+    PropTypes.string,
+  ]).isRequired,
   maxAge: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
 };
