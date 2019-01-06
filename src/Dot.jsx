@@ -12,7 +12,7 @@ const Dot = ({
     }}
   >
     <div>
-      {'\u2022'}
+      {'\u2219'}
     </div>
     {
       crossedOut &&

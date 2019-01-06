@@ -43,7 +43,7 @@ describe('Dot', () => {
     });
 
     it('renders a bullet point', () => {
-      expect(dotSymbol()).toHaveText('\u2022');
+      expect(dotSymbol()).toHaveText('\u2219');
     });
 
     it('does not render an x symbol', () => {
@@ -59,7 +59,7 @@ describe('Dot', () => {
     });
 
     it('renders a bullet point', () => {
-      expect(dotSymbol()).toHaveText('\u2022');
+      expect(dotSymbol()).toHaveText('\u2219');
     });
     
     it('renders a x symbol', () => {
